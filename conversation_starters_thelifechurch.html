@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation Starters</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 40px 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .category {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #d62828;
+        }
+
+        .question-box {
+            font-size: 20px;
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Conversation Starters</h1>
+    <p>Get to know each other with engaging questions</p>
+</header>
+
+<div class="container">
+    <h2>Select a Category</h2>
+
+    <div class="category">
+        <button onclick="getQuestion('perception')">Perception Questions</button>
+        <button onclick="getQuestion('connection')">Connection Questions</button>
+        <button onclick="getQuestion('reflection')">Reflection Questions</button>
+    </div>
+
+    <div class="question-box" id="question-box">
+        Click a button to get a question!
+    </div>
+</div>
+
+<script>
+    const questions = {
+        perception: [
+            "What do you think my favorite way to spend a weekend is?",
+            "What do you think is one of my strengths based on first impressions?",
+            "How would you describe my personality in one word?",
+            "What do you think is my favorite type of music?",
+            "How do you think I relax after a long day?",
+            "What do you think I enjoy most in my free time?",
+            "What do you think my dream vacation would look like?",
+            "If you could guess, what is my favorite food?",
+            "What do you think is one of my hidden talents?",
+            "How do you think I handle challenges?",
+            "What do you think makes me smile?",
+            "How do you think I celebrate special occasions?",
+            "What do you think I value most in friendships?",
+            "What kind of person do you think I was in high school?",
+            "What do you think is a passion of mine that I don't talk about much?"
+        ],
+        connection: [
+            "What is something we have in common?",
+            "What is one thing you enjoy doing with friends or family?",
+            "What is something you feel passionate about?",
+            "What's your favorite way to spend a day off?",
+            "What is one goal you're currently working towards?",
+            "What is something you enjoy talking about for hours?",
+            "What is one thing you like to do to relax?",
+            "What's something you've learned recently that inspired you?",
+            "What's one of the most fun experiences you've had this year?",
+            "How do you enjoy spending time with people you care about?",
+            "What's a memory that always makes you laugh?",
+            "What's a hobby or interest you'd like to explore more?",
+            "What's one of the best compliments you've ever received?",
+            "What's a value that's really important to you in life?",
+            "What's one thing you'd like to do more often in the future?"
+        ],
+        reflection: [
+            "What is something you've learned about yourself in the past year?",
+            "What is one challenge you've faced that made you stronger?",
+            "What is something you're proud of accomplishing recently?",
+            "What is one thing you're grateful for right now?",
+            "What is something that brings you joy in your daily life?",
+            "What's a piece of advice that has helped you recently?",
+            "What is a personal goal you've achieved that you're proud of?",
+            "What is something you've learned from a recent mistake?",
+            "What's one way you like to give back to others?",
+            "How do you stay motivated during tough times?",
+            "What's something that has positively impacted your life recently?",
+            "How do you approach new challenges or opportunities?",
+            "What's a lesson you've learned that has shaped who you are today?",
+            "What's a meaningful connection you've made recently?",
+            "How do you celebrate personal growth or achievements?"
+        ]
+    };
+
+    function getQuestion(category) {
+        const questionBox = document.getElementById('question-box');
+        const randomIndex = Math.floor(Math.random() * questions[category].length);
+        questionBox.innerText = questions[category][randomIndex];
+    }
+</script>
+
+</body>
+</html>
